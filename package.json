@@ -1,10 +1,12 @@
 {
   "name": "fili",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "main": "dist/fili.min.js",
-  "author": "Florian Markert",
+  "author": "Florian Markert & Eric Yates",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "node-gyp": "^10.0.1"
+  },
   "devDependencies": {
     "babel": "^5.5.8",
     "babelify": "^6.1.2",

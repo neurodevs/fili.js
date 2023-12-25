@@ -420,9 +420,9 @@
          }
        }
        return {
-         re: fft.re,
-         im: fft.im
-       }
+        re: Array.from(fft.re),
+        im: Array.from(fft.im)
+      };
      },
      inverse: function (re, im) {
        var i, j, n, k, k2, h, d, c, s, ik, dx, dy
@@ -453,10 +453,16 @@
          }
        }
 
-       for (i = n; i--;) {
-         fft.buffer[i] = fft.reI[i] / n
-       }
-       return fft.buffer
+       let buffer = {
+        re: new Array(n),
+        im: new Array(n)
+      }
+
+      for (i = n; i--;) {
+        buffer.re[i] = fft.reI[i] / n;
+        buffer.im[i] = fft.imI[i] / n;
+      }
+      return buffer;
      },
      magnitude: function (params) {
        var ret = []
